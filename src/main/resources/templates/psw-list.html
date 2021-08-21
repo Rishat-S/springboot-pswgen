@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>psw</title>
+</head>
+<body>
+<div th:switch="${psw}">
+    <h2 th:case="null">No psw</h2>
+    <div th:case="*">
+        <table>
+            <thead>
+            <tr>
+                <th>Password</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="psw : ${psw}">
+                <td th:text="${psw}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <p><a href="/psw">Generate</a></p>
+</div>
+</body>
+</html>
